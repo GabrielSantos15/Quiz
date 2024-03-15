@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="shortcut icon" href="images/ifsp-logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="questoes.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <section id="homeSection">
+      <img src="images/ifsp-logo.png" alt="Logo do Instituto Federal">
+      <h1>Quiz Historia</h1>
+      <p>Teste seus conechimentos sobre asjkhdashd,ajshdjasd,akshdjk ejashd </p>
+      <button class="button" onclick="play()">Iniciar</button>
+    </section>
+    <section id="quizSection">
+      <span class="question">
+        <output>1</output>
+        <h2 id="question"></h2>
+      </span>
+      <div>
+        <button id="resp1" onclick="verify('resp1')"></button>
+        <button id="resp2" onclick="verify('resp2')"></button>
+        <button id="resp3" onclick="verify('resp3')"></button>
+        <button id="resp4" onclick="verify('resp4')"></button>
+      </div>
+    </section>
+    <section id="resultsSection">
+      <h2>Parabéns</h2>
+      <i class="fa-solid fa-trophy"></i>
+      <span> <output>9</output>/ 15</span>
+    </section>
+  </main>
+</body>
+
+</html>
