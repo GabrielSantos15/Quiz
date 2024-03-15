@@ -1,18 +1,23 @@
-const homeSection = document.querySelector("#homeSection")
-const quizSection = document.querySelector("#quizSection")
-const resultsSection = document.querySelector("#resultsSection")
+const homeSection = document.querySelector("#homeSection");
+const quizSection = document.querySelector("#quizSection");
+const resultsSection = document.querySelector("#resultsSection");
 
 const questionTxt = document.querySelector("#question");
-let rightAnswer = undefined
-
+let rightAnswer = undefined;
 
 function newQuestion() {
-    if(questionsData.length == 0){
-      quizSection.style.display = 'none'
-      resultsSection.style.display = 'flex'
-      
-      return 
-    }
+  if (questionsData.length == 0) {
+    quizSection.style.display = "none";
+    resultsSection.style.display = "flex";
+    return;
+  }
+
+  const inputsRadio = document.querySelectorAll('.answersContainer input');
+  inputsRadio.forEach((input) => {
+    input.disabled = false;
+    input.checked = false;
+  });
+
   const question = randomQuestion();
 
   questionTxt.innerHTML = question.pergunta;
@@ -20,21 +25,21 @@ function newQuestion() {
   const optionsResp = aleatorizarOrdem(question.respostas);
 
   for (let i = 0; i < optionsResp.length; i++) {
-    document.querySelector(`#resp${i+1}`).innerHTML = optionsResp[i].txt
+    document.querySelector(`#resp${i + 1}`).innerHTML = optionsResp[i].txt;
 
-    if(optionsResp[i].status){
-        rightAnswer = optionsResp[i].txt
+    if (optionsResp[i].status) {
+      rightAnswer = optionsResp[i].txt;
     }
   }
 }
 
 function randomQuestion() {
-    const index = Math.floor(Math.random() * questionsData.length)
-    const random =  questionsData[index];
-    
-    questionsData.splice(index,1)
+  const index = Math.floor(Math.random() * questionsData.length);
+  const random = questionsData[index];
 
-    return random
+  questionsData.splice(index, 1);
+
+  return random;
 }
 
 function aleatorizarOrdem(lista) {
@@ -51,21 +56,32 @@ function aleatorizarOrdem(lista) {
   return lista;
 }
 
-function verify(id){
-    
-    if(document.getElementById(id).innerHTML == rightAnswer){
-        alert('certo')
-        newQuestion();
-    }else{
-        alert('errado')
-    }
-    
+function verify() {
+  if (
+    document.querySelector(".answersContainer input:checked + label")
+      .innerHTML == rightAnswer
+  ) {
+    alert("certo");
+  } else {
+    alert("errado");
+  }
+
+  // mostrar reposta
+  document.querySelector("#verify").style.display = "none";
+  document.querySelector("#next").style.display = "block";
+
+  const uncheckedInputs = document.querySelectorAll(
+    ".answersContainer input:not(:checked)"
+  );
+
+  uncheckedInputs.forEach((input) => {
+    input.disabled = true;
+  });
 }
 
-function play(){
-  homeSection.style.display = "none"
-  quizSection.style.display = "block"
+function play() {
+  homeSection.style.display = "none";
+  quizSection.style.display = "flex";
 
-  newQuestion()
+  newQuestion();
 }
-
