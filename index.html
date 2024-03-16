@@ -19,7 +19,7 @@
     <section id="homeSection">
       <img src="images/ifsp-logo.png" alt="Logo do Instituto Federal">
       <h1>Quiz Historia</h1>
-      <p>Teste seus conechimentos sobre asjkhdashd,ajshdjasd,akshdjk ejashd </p>
+      <p>Teste seus conhecimentos sobre as revoltas da Sabinada, Balaiada e Cabanagem.</p>
       <button class="button" onclick="play()">Iniciar</button>
     </section>
     <section id="quizSection">
@@ -43,12 +43,6 @@
         <input type="radio" name="answer" id="d">
         <label id="resp4" class="answer" for="d"></label>
 
-
-        <!-- <button class="answer" id="resp1" onclick="verify('resp1')"></button>
-        <button class="answer" id="resp2" onclick="verify('resp2')"></button>
-        <button class="answer" id="resp3" onclick="verify('resp3')"></button>
-        <button class="answer" id="resp4" onclick="verify('resp4')"></button> -->
-
       </div>
 
       <button class="button" id="verify" onclick="verify('resp4')">Verificar</button>
@@ -57,10 +51,19 @@
     </section>
 
     <section id="resultsSection">
-
-      <h2>Parabéns</h2>
-
-      <span> <output>9</output>/ 15</span>
+      <h2>Resultado</h2>
+      <picture>
+        <img src="images/winner.png" alt="Troféu">
+      </picture>
+      
+      <h3>Parabéns</h3>
+      <div>
+        <p>Sua pontuação foi</p>
+        <span id="pointContainer"> <output id="point"></output>/<output id="questionsNumber"></output></span>
+        <p>Seu tempo foi</p>
+        <span id="tempContainer"><output id="temp"></output></span>
+      </div>
+      <button class="button" id="reload" onclick="reload()">Reiniciar</button>
 
     </section>
   </main>

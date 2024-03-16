@@ -3,16 +3,35 @@ const quizSection = document.querySelector("#quizSection");
 const resultsSection = document.querySelector("#resultsSection");
 
 const questionTxt = document.querySelector("#question");
+
+const questionsNumber = questionsData.length;
 let rightAnswer = undefined;
+
+let startTime;
+let endTime;
+let points = 0;
 
 function newQuestion() {
   if (questionsData.length == 0) {
-    quizSection.style.display = "none";
-    resultsSection.style.display = "flex";
+    showResults();
     return;
   }
 
-  const inputsRadio = document.querySelectorAll('.answersContainer input');
+  document.querySelector("#verify").style.display = "block";
+  document.querySelector("#next").style.display = "none";
+
+  const inputs = document.querySelectorAll(".answersContainer label");
+
+  console.log(inputs);
+  inputs.forEach((input) => {
+    if (input.classList.contains("correct")) {
+      input.classList.remove("correct");
+    } else if (input.classList.contains("wrong")) {
+      input.classList.remove("wrong");
+    }
+  });
+
+  const inputsRadio = document.querySelectorAll(".answersContainer input");
   inputsRadio.forEach((input) => {
     input.disabled = false;
     input.checked = false;
@@ -61,14 +80,27 @@ function verify() {
     document.querySelector(".answersContainer input:checked + label")
       .innerHTML == rightAnswer
   ) {
-    alert("certo");
-  } else {
-    alert("errado");
+    points += 1;
   }
 
   // mostrar reposta
   document.querySelector("#verify").style.display = "none";
   document.querySelector("#next").style.display = "block";
+
+  document.querySelector(".progress .progressValue").style.width = `${
+    100 - (questionsData.length * 100) / questionsNumber
+  }%`;
+
+  const inputs = document.querySelectorAll(".answersContainer label");
+
+  console.log(inputs);
+  inputs.forEach((input) => {
+    if (input.innerHTML == rightAnswer) {
+      input.classList.add("correct");
+    } else {
+      input.classList.add("wrong");
+    }
+  });
 
   const uncheckedInputs = document.querySelectorAll(
     ".answersContainer input:not(:checked)"
@@ -79,9 +111,44 @@ function verify() {
   });
 }
 
+function showResults() {
+  quizSection.style.display = "none";
+  resultsSection.style.display = "flex";
+
+  document.getElementById("point").innerHTML = points;
+  document.getElementById("questionsNumber").innerHTML = questionsNumber;
+
+  endTime = new Date();
+
+  const diferenceTime = (endTime - startTime) / 1000;
+
+  document.getElementById("temp").innerHTML = convertSeconds(diferenceTime);
+}
+
+function reload() {
+  window.location.reload();
+}
 function play() {
   homeSection.style.display = "none";
   quizSection.style.display = "flex";
 
+  startTime = new Date();
+
   newQuestion();
+}
+function convertSeconds(seconds) {
+  const h = Math.floor(seconds / 3600);
+  const min = Math.floor((seconds % 3600) / 60);
+  const s = Math.floor(seconds % 60);
+
+  if (h > 0) {
+    return `
+    ${h.toString().padStart(2, "0")}:
+    ${min.toString().padStart(2, "0")}:
+    ${s.toString().padStart(2, "0")}`;
+  } else {
+    return `
+    ${min.toString().padStart(2, "0")}:
+    ${s.toString().padStart(2, "0")}`;
+  }
 }

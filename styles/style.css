@@ -75,7 +75,8 @@ section {
     display: block;
     background-color: var(--corProgresso);
     height: 100%;
-    width: 50%;
+    width: 0;
+    transition: all .5s;
 }
 
 #quizSection  h2{
@@ -95,6 +96,12 @@ section {
     filter: saturate(2.5) contrast(.9) brightness(.9);
 }
 
+.answersContainer input + label.correct{
+    background-color: var(--corRespostaCerta);
+}
+.answersContainer input + label.wrong{
+    background-color: var(--corRespostaErrada);
+}
 .answer {
     all: unset;
     background-color: var(--corResposta);
@@ -105,6 +112,45 @@ section {
 
     cursor: pointer;
 }
+
+#resultsSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+}
+
+#resultsSection h2,#tempContainer{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+#resultsSection picture{
+    display: grid;
+    place-items: center;
+
+    width : min(200px,100%) ;
+    background-color: #15253c;
+    aspect-ratio:  1 / 1;
+    padding: 1em;
+    border-radius: 50%;
+}
+
+#resultsSection picture img{
+    width: 100%;
+    margin-top: .5em;
+}
+
+#resultsSection h3,#pointContainer{
+    font-weight: 600;
+    font-size: 2.5em;
+}
+
+#pointContainer #point{
+    color: var(--corProgresso);
+}
+
 
 #quizSection,
 #resultsSection,#next{
