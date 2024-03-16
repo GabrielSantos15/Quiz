@@ -18,7 +18,7 @@
   <main>
     <section id="homeSection">
       <img src="images/ifsp-logo.png" alt="Logo do Instituto Federal">
-      <h1>Quiz Historia</h1>
+      <h1>Quiz História</h1>
       <p>Teste seus conhecimentos sobre as revoltas da Sabinada, Balaiada e Cabanagem.</p>
       <button class="button" onclick="play()">Iniciar</button>
     </section>
@@ -31,21 +31,21 @@
 
       <div class="answersContainer">
 
-        <input type="radio" name="answer" id="a">
+        <input type="radio" name="answer" id="a" oninput="enableVerfy()">
         <label id="resp1" class="answer" for="a"></label>
 
-        <input type="radio" name="answer" id="b">
-        <label id="resp2" class="answer" for="b"></label>
+        <input type="radio" name="answer" id="b" oninput="enableVerfy()">
+        <label id="resp2" class="answer" for="b" ></label>
 
-        <input type="radio" name="answer" id="c">
+        <input type="radio" name="answer" id="c" oninput="enableVerfy()">
         <label id="resp3" class="answer" for="c"></label>
 
-        <input type="radio" name="answer" id="d">
+        <input type="radio" name="answer" id="d" oninput="enableVerfy()">
         <label id="resp4" class="answer" for="d"></label>
 
       </div>
 
-      <button class="button" id="verify" onclick="verify('resp4')">Verificar</button>
+      <button class="button disabled" id="verify" onclick="verify('resp4')">Verificar</button>
       <button class="button" id="next" onclick="newQuestion()">Continuar</button>
 
     </section>

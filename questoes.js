@@ -58,7 +58,7 @@ const questionsData = [
             },
             {
                 status: false,
-                txt: "A Sabinada foi uma revolta do período republicano brasileiro e tinha como objetivo a abolição da escravidão, se trata de una revolta separatista."
+                txt: "A Sabinada foi uma revolta do período republicano brasileiro e tinha como objetivo a abolição da escravidão, se trata de uma revolta separatista."
             }
             ]
     },

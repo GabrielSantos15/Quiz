@@ -25,22 +25,30 @@ body {
 }
 
 main {
-    height: 100vh;
+    margin: auto;
+    width: min(800px, 100vw);
 }
 
 section {
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
     padding: 3em 1em;
 }
 
 #homeSection {
-    height: 100%;
-
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    text-align: center;
+}
+
+#homeSection img {
+    width: min(150px, 100%);
+}
+
+#homeSection h1 {
+    font-size: 2em;
 }
 
 .button {
@@ -55,15 +63,27 @@ section {
     width: 100%;
 
     border-radius: 15px;
+    box-shadow: 0px 5px 5px #00000047;
+    cursor: pointer;
+}
+
+#verify.disabled {
+    cursor: default;
+    filter: opacity(50%);
+}
+
+button:hover {
+    filter: brightness(.9);
 }
 
 #quizSection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1.5em;
 }
 
-#quizSection  .progress {
+#quizSection .progress {
     display: block;
     background-color: #d9d9d9;
     border-radius: 5px;
@@ -71,7 +91,8 @@ section {
     width: 100%;
     overflow: hidden;
 }
-#quizSection  .progress  span{
+
+#quizSection .progress span {
     display: block;
     background-color: var(--corProgresso);
     height: 100%;
@@ -79,41 +100,50 @@ section {
     transition: all .5s;
 }
 
-#quizSection  h2{
+#quizSection h2 {
     font-size: 1.2em;
     font-weight: 600;
 }
+
 .answersContainer {
     display: flex;
     flex-direction: column;
-    gap: 13px;
-}
-.answersContainer input{
-    display: none;
-}
-.answersContainer input:checked + label{
-    outline:  .2em solid var(--corSelect);
-    filter: saturate(2.5) contrast(.9) brightness(.9);
+    gap: 1em;
 }
 
-.answersContainer input + label.correct{
-    background-color: var(--corRespostaCerta);
+.answersContainer input {
+    display: none;
 }
-.answersContainer input + label.wrong{
-    background-color: var(--corRespostaErrada);
-}
+
 .answer {
     all: unset;
     background-color: var(--corResposta);
-    
+
     border-radius: 15px;
     padding: 15px;
-    width: 100%;
+    max-width: 100%;
 
     cursor: pointer;
 }
 
-#resultsSection{
+.answer:hover {
+    filter: brightness(.95);
+}
+
+.answersContainer input:checked+label {
+    outline: .2em solid var(--corSelect);
+    filter: saturate(2.5) contrast(.9) brightness(.9);
+}
+
+.answersContainer input+label.correct {
+    background-color: var(--corRespostaCerta);
+}
+
+.answersContainer input+label.wrong {
+    background-color: var(--corRespostaErrada);
+}
+
+#resultsSection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -122,37 +152,71 @@ section {
     text-align: center;
 }
 
-#resultsSection h2,#tempContainer{
+#resultsSection h2,
+#tempContainer {
     font-size: 1.3em;
     font-weight: 600;
 }
-#resultsSection picture{
+
+#resultsSection picture {
     display: grid;
     place-items: center;
 
-    width : min(200px,100%) ;
+    width: min(200px, 100%);
     background-color: #15253c;
-    aspect-ratio:  1 / 1;
+    aspect-ratio: 1 / 1;
     padding: 1em;
     border-radius: 50%;
 }
 
-#resultsSection picture img{
+#resultsSection picture img {
     width: 100%;
     margin-top: .5em;
 }
 
-#resultsSection h3,#pointContainer{
+#resultsSection h3,
+#pointContainer {
     font-weight: 600;
     font-size: 2.5em;
 }
 
-#pointContainer #point{
+#pointContainer #point {
     color: var(--corProgresso);
 }
 
 
 #quizSection,
-#resultsSection,#next{
+#resultsSection,
+#next {
     display: none;
+}
+
+/*----------------------- Estilo para Tablets e Desktops------------------- */
+@media screen and (min-width: 600px) {
+    #homeSection h1 {
+        font-size: 3em;
+    }
+
+    #quizSection  h2{
+        font-size: 1.5em;
+    }
+
+    #resultsSection picture{
+        width: min(250px, 100%);
+    }
+
+    #resultsSection p{
+        font-size: 1.3em;
+    }
+
+    #pointContainer {
+        font-weight: 600;
+        font-size: 3em;
+    }
+
+    #resultsSection h2,
+    #tempContainer {
+    font-size: 1.7em;
+    font-weight: 600;
+}
 }

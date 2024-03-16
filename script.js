@@ -11,14 +11,25 @@ let startTime;
 let endTime;
 let points = 0;
 
+function play() {
+  homeSection.style.display = "none";
+  quizSection.style.display = "flex";
+
+  startTime = new Date();
+
+  newQuestion();
+}
+
 function newQuestion() {
   if (questionsData.length == 0) {
     showResults();
     return;
   }
 
+  document.querySelector("#verify").classList.add("disabled")
   document.querySelector("#verify").style.display = "block";
   document.querySelector("#next").style.display = "none";
+
 
   const inputs = document.querySelectorAll(".answersContainer label");
 
@@ -75,12 +86,23 @@ function aleatorizarOrdem(lista) {
   return lista;
 }
 
+function enableVerfy(){
+  document.querySelector("#verify").classList.remove("disabled")
+}
 function verify() {
+  if (document.querySelector("#verify").classList.contains("disabled")) return;
+
   if (
     document.querySelector(".answersContainer input:checked + label")
       .innerHTML == rightAnswer
   ) {
-    points += 1;
+    points++;
+
+    const audioCorrect = new Audio("sounds/correct.mp3");
+    audioCorrect.play();
+  } else {
+    const audioIncorrect = new Audio("sounds/error.mp3");
+    audioIncorrect.play();
   }
 
   // mostrar reposta
@@ -125,17 +147,6 @@ function showResults() {
   document.getElementById("temp").innerHTML = convertSeconds(diferenceTime);
 }
 
-function reload() {
-  window.location.reload();
-}
-function play() {
-  homeSection.style.display = "none";
-  quizSection.style.display = "flex";
-
-  startTime = new Date();
-
-  newQuestion();
-}
 function convertSeconds(seconds) {
   const h = Math.floor(seconds / 3600);
   const min = Math.floor((seconds % 3600) / 60);
@@ -151,4 +162,8 @@ function convertSeconds(seconds) {
     ${min.toString().padStart(2, "0")}:
     ${s.toString().padStart(2, "0")}`;
   }
+}
+
+function reload() {
+  window.location.reload();
 }
