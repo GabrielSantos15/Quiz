@@ -33,7 +33,6 @@ function newQuestion() {
 
   const inputs = document.querySelectorAll(".answersContainer label");
 
-  console.log(inputs);
   inputs.forEach((input) => {
     if (input.classList.contains("correct")) {
       input.classList.remove("correct");
@@ -115,7 +114,6 @@ function verify() {
 
   const inputs = document.querySelectorAll(".answersContainer label");
 
-  console.log(inputs);
   inputs.forEach((input) => {
     if (input.innerHTML == rightAnswer) {
       input.classList.add("correct");
