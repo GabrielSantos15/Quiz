@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --fundo: #F0EBE6;
-    --corBotao: #562121;
-    --corSelect: #56212133;
-    --corProgresso: #2b9f3f;
-    --corResposta: #f0ddc5;
-    --corRespostaErrada: #F0C5C5;
-    --corRespostaCerta: #C6F0C5;
+    --fundo: #6663f5;
+    --fundoSection: #f5f5f5;
+    --corBotao: #4b007c;
+    --corSelect: #a783fa;
+    --corProgresso: #008cdd;
+    --corResposta: #c5cdf0;
+    --corRespostaErrada: #f0a8c4;
+    --corRespostaCerta: #61f1c6;
 
     --fontPadrao: "Poppins", sans-serif;
     --fontBotao: "Londrina Solid", sans-serif;
@@ -30,7 +31,8 @@ main {
 }
 
 section {
-    min-height: 100vh;
+    background-color: var(--fundoSection);
+    min-height: 100dvh;
     width: 100%;
     padding: 3em 1em;
 }
@@ -38,7 +40,7 @@ section {
 #homeSection {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
 }
@@ -56,7 +58,7 @@ section {
     text-align: center;
     background-color: var(--corBotao);
     font-family: var(--fontBotao);
-    color: var(--fundo);
+    color: #fff;
     font-size: 2em;
 
     height: 50px;
@@ -77,7 +79,7 @@ button:hover {
 }
 
 #quizSection {
-    display: flex;
+    display: grid;
     flex-direction: column;
     justify-content: space-between;
     gap: 1em;
@@ -106,8 +108,8 @@ button:hover {
 }
 
 .answersContainer {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1em;
 }
 
@@ -158,19 +160,19 @@ button:hover {
     font-weight: 600;
 }
 
-#resultsSection picture {
+#resultsSection figure {
     display: grid;
     place-items: center;
 
     width: min(200px, 100%);
-    background-color: #15253c;
     aspect-ratio: 1 / 1;
     padding: 1em;
-    border-radius: 50%;
 }
 
-#resultsSection picture img {
+#resultsSection figure img {
+    height: 100%;
     width: 100%;
+    object-fit: contain;
     margin-top: .5em;
 }
 
@@ -193,19 +195,27 @@ button:hover {
 
 /*----------------------- Estilo para Tablets e Desktops------------------- */
 @media screen and (min-width: 600px) {
+    main {
+        padding: 2em;
+    }
+
+    section {
+        min-height: 600px;
+    }
+
     #homeSection h1 {
         font-size: 3em;
     }
 
-    #quizSection  h2{
+    #quizSection h2 {
         font-size: 1.5em;
     }
 
-    #resultsSection picture{
+    #resultsSection picture {
         width: min(250px, 100%);
     }
 
-    #resultsSection p{
+    #resultsSection p {
         font-size: 1.3em;
     }
 
@@ -216,7 +226,7 @@ button:hover {
 
     #resultsSection h2,
     #tempContainer {
-    font-size: 1.7em;
-    font-weight: 600;
-}
+        font-size: 1.7em;
+        font-weight: 600;
+    }
 }

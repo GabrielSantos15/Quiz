@@ -2,6 +2,7 @@ const homeSection = document.querySelector("#homeSection");
 const quizSection = document.querySelector("#quizSection");
 const resultsSection = document.querySelector("#resultsSection");
 
+const questionNumberOut = document.querySelector("#questionNumber") 
 const questionTxt = document.querySelector("#question");
 
 const questionsNumber = questionsData.length;
@@ -10,6 +11,7 @@ let rightAnswer = undefined;
 let startTime;
 let endTime;
 let points = 0;
+let questionNumber = 0
 
 function play() {
   homeSection.style.display = "none";
@@ -49,6 +51,8 @@ function newQuestion() {
 
   const question = randomQuestion();
 
+  questionNumber++
+  questionNumberOut.innerHTML = questionNumber
   questionTxt.innerHTML = question.pergunta;
 
   const optionsResp = aleatorizarOrdem(question.respostas);

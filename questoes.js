@@ -1,269 +1,222 @@
 const questionsData = [
-    // -------------------------------Revolta Sabinada-----------------------
-    // questao 1
+    // -------------------------------Origem do nome Bluetooth-----------------------
     {
-        pergunta : "A alternativa que compõe o que está por trás do nome da revolta popular brasileira \"Sabinada\" é:",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "É uma homenagem ao líder Francisco Sabino Barroso."
-            }  ,
+        pergunta : "A alternativa que explica a origem do nome da tecnologia 'Bluetooth' é:",
+        respostas : [
             {
-                status: false,
-                txt: "O nome serve para lembrar da época em que não sabiam nada."
-            },{
-                status: false,
-                txt: "O nome foi dado em homenagem a Eduardo Sabino de Almeida."
+                status: true,
+                txt: "É uma homenagem a um rei viking chamado Harald 'Bluetooth', conhecido por unir tribos, assim como a tecnologia conecta dispositivos."
             },
             {
                 status: false,
-                txt: "A revolta possui este nome por se tratar de uma revolta separatista."
-            }
-            ]
-    },
-    //questao 2
-    {
-        pergunta : "A alternativa que retrata o contexto histórico em que se desenvolveu a revolta Sabinada é:",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "O Período Regencial foi marcado por intensas disputas e confrontos nas províncias e na Bahia. Os sabinos pretendiam implantar uma república na região."
-            }  ,
-            {
-                status: false,
-                txt: "A Sabinada ocorreu no período da proclamação da república, em 1889, e os ideais positivistas do exército influenciaram os revoltosos"
-            },{
-                status: false,
-                txt: "Francisco Sabino convocou seus aliados a lutarem contra o domínio português, que insistia em explorar a região açucareira na Bahia."
+                txt: "Foi uma criação aleatória de engenheiros da IBM para soar moderno."
             },
             {
                 status: false,
-                txt: "A Sabinada foi uma revolta do período republicano brasileiro e tinha como objetivo a abolição da escravidão, se trata de uma revolta separatista."
-            }
-            ]
-    },
-    //questão 3
-    {
-        pergunta : "Como as autoridades brasileiras lidaram na época com os rebeldes durante a revolta Sabinada?",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "Utilizaram repressão militar."
-            }  ,
-            {
-                status: false,
-                txt: "Negociaram uma rendição pacífica."
-            },{
-                status: false,
-                txt: "Concederam anistia aos rebeldes"
+                txt: "O nome vem da coloração azul usada em cabos de rede no início da tecnologia."
             },
             {
                 status: false,
-                txt: "Ignoraram os conflitos."
+                txt: "É uma sigla técnica que significa 'Binary Link Over Universal Transmission'."
             }
-            ]
+        ]
     },
-    // questão 4
+    // -------------------------------Origem do nome JavaScript-----------------------
     {
-        pergunta : "Qual era o objetivo dos rebeldes durante a Sabinada?",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "Estabelecer uma república independente na Bahia"
-            }  ,
+        pergunta : "Por que a linguagem JavaScript recebeu esse nome?",
+        respostas : [
             {
-                status: false,
-                txt: "Lutar pela abolição da escravidão"
-            },{
-                status: false,
-                txt: "Defender os interesses da coroa portuguesa"
+                status: true,
+                txt: "Foi uma estratégia de marketing para aproveitar a popularidade da linguagem Java na época."
             },
             {
                 status: false,
-                txt: "Expandir o território brasileiro para o sul"
-            }
-            ]
-    },
-    // ------------------------------------- Revolta Balaiada ------------------
-    // questão 1
-    {
-        pergunta : "Qual foi a principal característica dos participantes da Balaiada?",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "Camadas mais pobres e marginalizadas da sociedade"
-            }  ,
-            {
-                status: false,
-                txt: "Elite econômica e política"
-            },{
-                status: false,
-                txt: "Classe média urbana"
+                txt: "Porque ela foi criada por desenvolvedores da ilha de Java, na Indonésia."
             },
             {
                 status: false,
-                txt: "Militares insatisfeitos com o governo"
-            }
-            ]
-    },
-    // questão 2    
-    {
-        pergunta : "Qual dos seguintes motivos não foi uma causa da Balaiada, uma revolta popular que ocorreu no Maranhão entre 1838 e 1841?",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "Condições de trabalho precárias dos escravos."
-            }  ,
-            {
-                status: false,
-                txt: "Descontentamento com a política centralizadora do Império."
-            },{
-                status: false,
-                txt: "Aumento dos impostos sobre a produção de algodão."
+                txt: "Por ser baseada diretamente na linguagem Java."
             },
             {
                 status: false,
-                txt: "Disputas políticas entre os partidos conservadores e liberais."
+                txt: "Porque ela usa o mesmo compilador do Java."
             }
-            ]
+        ]
     },
-    //questão 3
+    // -------------------------------Bug de software-----------------------
     {
-        pergunta : "O local onde ocorreu a Balaiada foi:",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: " Na província do Maranhão."
-            }  ,
+        pergunta : "De onde surgiu o termo 'bug' para se referir a falhas em sistemas?",
+        respostas : [
             {
-                status: false,
-                txt: "Em Salvador, na Bahia"
-            },{
-                status: false,
-                txt: "Na província do Grão-Pará."
+                status: true,
+                txt: "De um inseto real preso em um computador da década de 1940, registrado como a causa de uma falha."
             },
             {
                 status: false,
-                txt: " Na capital do Rio de Janeiro."
-            }
-            ]
-    },
-    //questão 4
-    {
-        pergunta : "Qual líder rebelde se destacou durante a Balaiada, liderando uma facção conhecida como \"Batalhão dos Periquitos\"?",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "Manuel Francisco dos Anjos Ferreira."
-            }  ,
-            {
-                status: false,
-                txt: "Raimundo Gomes."
-            },{
-                status: false,
-                txt: "Cosme Bento das Chagas"
+                txt: "É uma sigla para 'Binary Underlying Glitch'."
             },
             {
                 status: false,
-                txt: "Vicente Ferreira."
-            }
-            ]
-    },
-    //------------------------------------ Revolta Cabanagem --------------------------------
-    // questão 1
-    {
-        pergunta : "Em qual região do Brasil a Cabanagem teve maior impacto?",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "Norte"
-            }  ,
-            {
-                status: false,
-                txt: "Sul"
-            },{
-                status: false,
-                txt: "Nordeste"
+                txt: "Vem da ideia de que bugs são como vírus que atacam softwares."
             },
             {
                 status: false,
-                txt: "Centro-Oeste"
+                txt: "Foi usado pela primeira vez por Bill Gates nos anos 90."
             }
-            ]
+        ]
     },
-    //questão 2
+    // -------------------------------Apple e a maçã-----------------------
     {
-        pergunta : "Qual foi o principal motivo que desencadeou a Cabanagem?",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "Insatisfação com a centralização política e econômica imposta pelo governo central."
-            }  ,
+        pergunta : "Por que a empresa Apple escolheu uma maçã como símbolo?",
+        respostas : [
             {
-                status: false,
-                txt: "Disputas territoriais entre as províncias."
-            },{
-                status: false,
-                txt: "Conflitos religiosos entre diferentes grupos étnicos"
+                status: true,
+                txt: "Em homenagem a Isaac Newton e à ideia de descoberta científica."
             },
             {
                 status: false,
-                txt: "Revolta contra a abolição da escravatura."
-            }
-            ]
-    },
-    // questão 3
-    {
-        pergunta : "Quem liderou a revolta da Cabanagem?",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "Félix Malcher"
-            }  ,
-            {
-                status: false,
-                txt: "Tiradentes"
-            },{
-                status: false,
-                txt: "Dom Pedro II"
+                txt: "Porque Steve Jobs era fã de torta de maçã."
             },
             {
                 status: false,
-                txt: "Zumbi dos Palmares"
-            }
-            ]
-    },
-    // questão 4
-    {
-        pergunta : "Onde teve início o movimento da Cabanagem?",
-        respostas : 
-            [
-              {
-                status: true,
-                txt: "Grão-Pará"
-            }  ,
-            {
-                status: false,
-                txt: "Rio de Janeiro"
-            },{
-                status: false,
-                txt: "Recife"
+                txt: "Porque maçã em inglês é fácil de lembrar."
             },
             {
                 status: false,
-                txt: "Salvador"
+                txt: "Por representar simplicidade e diversão, como um brinquedo infantil."
             }
-            ]
+        ]
     },
-]
+    // -------------------------------Primeiro vírus-----------------------
+    {
+        pergunta : "Qual foi o primeiro vírus de computador conhecido?",
+        respostas : [
+            {
+                status: true,
+                txt: "O 'Creeper', criado em 1971, que apenas exibia a mensagem 'I’m the creeper, catch me if you can!'."
+            },
+            {
+                status: false,
+                txt: "O 'ILOVEYOU', que se espalhava por e-mails com mensagens românticas."
+            },
+            {
+                status: false,
+                txt: "O 'Trojan Horse', que destruía arquivos do DOS."
+            },
+            {
+                status: false,
+                txt: "O 'Melissa', que desinstalava programas automaticamente."
+            }
+        ]
+    },
+    // -------------------------------Nome Linux-----------------------
+    {
+        pergunta : "O nome 'Linux' vem de:",
+        respostas : [
+            {
+                status: true,
+                txt: "Uma junção do nome do criador, Linus Torvalds, com 'Unix'."
+            },
+            {
+                status: false,
+                txt: "Uma sigla para 'Line Integrated User Network eXecution'."
+            },
+            {
+                status: false,
+                txt: "Um apelido de um antigo sistema da IBM."
+            },
+            {
+                status: false,
+                txt: "Nome de um mascote de pinguim criado em 1990 por um programador russo."
+            }
+        ]
+    },
+    // -------------------------------Nome Google-----------------------
+    {
+        pergunta : "A origem do nome 'Google' vem de:",
+        respostas : [
+            {
+                status: true,
+                txt: "Uma adaptação da palavra 'googol', que representa o número 1 seguido de 100 zeros."
+            },
+            {
+                status: false,
+                txt: "Um erro de digitação durante o registro do domínio, que era para ser 'Goggle'."
+            },
+            {
+                status: false,
+                txt: "Um termo criado por programadores indianos para representar algo rápido."
+            },
+            {
+                status: false,
+                txt: "Uma gíria antiga que significava 'pesquisar'."
+            }
+        ]
+    },
+    // -------------------------------Primeiro e-mail-----------------------
+    {
+        pergunta : "Quem enviou o primeiro e-mail da história?",
+        respostas : [
+            {
+                status: true,
+                txt: "Ray Tomlinson, em 1971, também foi o criador do uso do '@' nos e-mails."
+            },
+            {
+                status: false,
+                txt: "Tim Berners-Lee, criador da web, em 1989."
+            },
+            {
+                status: false,
+                txt: "Bill Gates, para divulgar o Windows 1.0 em 1985."
+            },
+            {
+                status: false,
+                txt: "Steve Jobs, quando fundou a Apple em 1976."
+            }
+        ]
+    },
+    // -------------------------------Origem do nome Wi-Fi-----------------------
+    {
+        pergunta : "O nome 'Wi-Fi' significa:",
+        respostas : [
+            {
+                status: true,
+                txt: "Nada específico, foi criado como uma marca parecida com 'Hi-Fi' para soar moderno."
+            },
+            {
+                status: false,
+                txt: "Wireless Fidelity, uma tecnologia criada pela NASA."
+            },
+            {
+                status: false,
+                txt: "World Internet Fiber Integration."
+            },
+            {
+                status: false,
+                txt: "Wireless Interface for Information."
+            }
+        ]
+    },
+    // -------------------------------Steve Jobs e o Atari-----------------------
+    {
+        pergunta : "Antes de fundar a Apple, Steve Jobs trabalhou em qual empresa de games?",
+        respostas : [
+            {
+                status: true,
+                txt: "Na Atari, ajudando a desenvolver o jogo Breakout."
+            },
+            {
+                status: false,
+                txt: "Na Nintendo, como designer de personagens."
+            },
+            {
+                status: false,
+                txt: "Na SEGA, no desenvolvimento do console Mega Drive."
+            },
+            {
+                status: false,
+                txt: "Na Microsoft, na criação de interfaces gráficas."
+            }
+        ]
+    }
+];

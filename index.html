@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz-História</title>
-  <link rel="shortcut icon" href="images/ifsp-logo.png" type="image/x-icon">
+  <title>QuizTech</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,9 +17,10 @@
 <body>
   <main>
     <section id="homeSection">
-      <img src="images/ifsp-logo.png" alt="Logo do Instituto Federal">
-      <h1>Quiz História</h1>
-      <p>Teste seus conhecimentos sobre as revoltas da Sabinada, Balaiada e Cabanagem.</p>
+
+      <img src="images/logo.png" alt="Logo">
+      <h1>QuizTech</h1>
+      <p>Teste seus conhecimentos sobre as curiosidades e histórias que marcaram a área de Tecnologia da Informação.</p>
       <button class="button" onclick="play()">Iniciar</button>
     </section>
     <section id="quizSection">
@@ -27,15 +28,16 @@
       <div class="progress">
         <span class="progressValue"></span>
       </div>
+      <h3>Questão <output id="questionNumber">1</output></h3>
       <h2 id="question"></h2>
 
-      <div class="answersContainer">
+      <article class="answersContainer">
 
         <input type="radio" name="answer" id="a" oninput="enableVerfy()">
         <label id="resp1" class="answer" for="a"></label>
 
         <input type="radio" name="answer" id="b" oninput="enableVerfy()">
-        <label id="resp2" class="answer" for="b" ></label>
+        <label id="resp2" class="answer" for="b"></label>
 
         <input type="radio" name="answer" id="c" oninput="enableVerfy()">
         <label id="resp3" class="answer" for="c"></label>
@@ -43,7 +45,7 @@
         <input type="radio" name="answer" id="d" oninput="enableVerfy()">
         <label id="resp4" class="answer" for="d"></label>
 
-      </div>
+      </article>
 
       <button class="button disabled" id="verify" onclick="verify('resp4')">Verificar</button>
       <button class="button" id="next" onclick="newQuestion()">Continuar</button>
@@ -52,17 +54,17 @@
 
     <section id="resultsSection">
       <h2>Resultado</h2>
-      <picture>
+      <figure>
         <img src="images/winner.png" alt="Troféu">
-      </picture>
-      
+      </figure>
+
       <h3>Parabéns</h3>
-      <div>
+      <article>
         <p>Sua pontuação foi</p>
         <span id="pointContainer"> <output id="point"></output>/<output id="questionsNumber"></output></span>
         <p>Seu tempo foi</p>
         <span id="tempContainer"><output id="temp"></output></span>
-      </div>
+      </article>
       <button class="button" id="reload" onclick="reload()">Reiniciar</button>
 
     </section>
