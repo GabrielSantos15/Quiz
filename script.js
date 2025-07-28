@@ -2,10 +2,10 @@ const homeSection = document.querySelector("#homeSection");
 const quizSection = document.querySelector("#quizSection");
 const resultsSection = document.querySelector("#resultsSection");
 
-const questionNumberOut = document.querySelector("#questionNumber") 
+const questionNumberOut = document.querySelector("#questionNumber")
 const questionTxt = document.querySelector("#question");
 
-const questionsNumber = questionsData.length;
+const questionsNumber = 10;
 let rightAnswer = undefined;
 
 let startTime;
@@ -23,7 +23,7 @@ function play() {
 }
 
 function newQuestion() {
-  if (questionsData.length == 0) {
+  if (questionNumber == questionsNumber) {
     showResults();
     return;
   }
@@ -89,7 +89,7 @@ function aleatorizarOrdem(lista) {
   return lista;
 }
 
-function enableVerfy(){
+function enableVerfy() {
   document.querySelector("#verify").classList.remove("disabled")
 }
 function verify() {
@@ -112,9 +112,12 @@ function verify() {
   document.querySelector("#verify").style.display = "none";
   document.querySelector("#next").style.display = "block";
 
-  document.querySelector(".progress .progressValue").style.width = `${
-    100 - (questionsData.length * 100) / questionsNumber
-  }%`;
+  document.querySelector(".progress .progressValue").style.width = `${(questionNumber * 100) / questionsNumber}%`;
+
+  // questionsNumber 100
+  // questionNumber  x
+
+  // X = questionNumber*100/questionsNumber
 
   const inputs = document.querySelectorAll(".answersContainer label");
 

@@ -3,8 +3,9 @@
 :root {
     --fundo: #6663f5;
     --fundoSection: #f5f5f5;
+    --corTexto: #140052;
     --corBotao: #4b007c;
-    --corSelect: #a783fa;
+    --corSelect: #3805576e;
     --corProgresso: #008cdd;
     --corResposta: #c5cdf0;
     --corRespostaErrada: #f0a8c4;
@@ -27,14 +28,17 @@ body {
 
 main {
     margin: auto;
-    width: min(800px, 100vw);
+    width: min(600px, 100vw);
+    background-color: var(--fundoSection);
+    overflow-y: auto;
 }
 
 section {
-    background-color: var(--fundoSection);
-    min-height: 100dvh;
+    padding: 2em;
+    height: 100dvh;
+    color: var(--corTexto);
     width: 100%;
-    padding: 3em 1em;
+    /* padding: 3em 1em; */
 }
 
 #homeSection {
@@ -45,8 +49,13 @@ section {
     text-align: center;
 }
 
-#homeSection img {
-    width: min(150px, 100%);
+#homeSection figure {
+    width: min(350px, 50%);
+}
+
+#homeSection figure img {
+    width: 100%;
+    object-fit: contain;
 }
 
 #homeSection h1 {
@@ -196,10 +205,12 @@ button:hover {
 /*----------------------- Estilo para Tablets e Desktops------------------- */
 @media screen and (min-width: 600px) {
     main {
-        padding: 2em;
+        margin: 1em auto;
+        border-radius: 10px;
     }
 
     section {
+        height: auto;
         min-height: 600px;
     }
 
